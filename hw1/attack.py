@@ -17,7 +17,7 @@ N = nn.Sequential(nn.Linear(10, 10, bias=False),
 device = torch.device("cuda:0")
 N.to(device)
 
-epsReal = 0.4 #depending on your data this might be large or small
+epsReal = 0.15 #depending on your data this might be large or small
 eps = epsReal - 1e-7 # small constant to offset floating-point erros
 
 # random input
@@ -44,7 +44,7 @@ if is_cw:
     if t == 0:
         max_steps = 7
     elif t == 1:
-        max_steps = 11
+        max_steps = 10
     c = 1
     w = torch.zeros((1,10)).to(device)
     w.requires_grad_(True)
