@@ -1,0 +1,16 @@
+Training original model:
+Epoch 1: Accuracy 0.91930 [2.15 seconds]
+Epoch 2: Accuracy 0.93590 [2.13 seconds]
+Epoch 3: Accuracy 0.94730 [2.14 seconds]
+Epoch 4: Accuracy 0.95500 [2.12 seconds]
+Epoch 5: Accuracy 0.95810 [2.13 seconds]
+FGSM on original model: Accuracy 0.27490 [0.31 seconds]
+PGD on original model: Accuracy 0.18300 [1.46 seconds]
+PGD adversarial training:
+Epoch 1: Accuracy 0.95190 [10.05 seconds]
+Epoch 2: Accuracy 0.95710 [9.93 seconds]
+Epoch 3: Accuracy 0.96160 [9.98 seconds]
+Epoch 4: Accuracy 0.96480 [10.01 seconds]
+Epoch 5: Accuracy 0.96710 [10.08 seconds]
+FGSM on enhanced model: Accuracy 0.85000 [0.32 seconds]
+PGD on enhanced model: Accuracy 0.83440 [1.42 seconds]
