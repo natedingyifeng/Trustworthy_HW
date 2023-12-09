@@ -190,7 +190,6 @@ def train_sound_and_prec_abs_model(model, opt, epochs, intervs, abs_intervs, sou
         if is_supervised:
             # Write the same soundness loss as before here
             constraints_soundness = [
-                dl2lib.diffsat.GEQ(outp[:, 0], torch.zeros_like(outp[:, 0])),
                 dl2lib.diffsat.LEQ(outp[:, 0], abs_ints[:, 0]),
                 dl2lib.diffsat.GEQ(outp[:, 1], abs_ints[:, 1]),
             ]
