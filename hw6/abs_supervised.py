@@ -101,13 +101,13 @@ def train_sound_abs_model(model, opt, epochs, intervs, abs_ints, is_supervised=T
                 dl2lib.diffsat.LEQ(outp[:, 0], abs_ints[:, 0]),
                 dl2lib.diffsat.GEQ(outp[:, 1], abs_ints[:, 1]),
             ] 
-            soundness_loss = dl2lib.diffsat.And(constraints).loss(None).mean()
+            soundness_loss = dl2lib.diffsat.And(constraints).loss(args).mean()
         else:
             constraints = [
                 dl2lib.diffsat.LEQ(outp[:, 0], torch.zeros_like(outp[:, 0])),
                 dl2lib.diffsat.GEQ(outp[:, 1], torch.maximum(intervs[:, 1], -intervs[:, 0])),
             ] 
-            soundness_loss = dl2lib.diffsat.And(constraints).loss(None).mean()
+            soundness_loss = dl2lib.diffsat.And(constraints).loss(args).mean()
 
         loss_history.append(soundness_loss.item())
         soundness_loss.backward()
@@ -193,24 +193,24 @@ def train_sound_and_prec_abs_model(model, opt, epochs, intervs, abs_intervs, sou
                 dl2lib.diffsat.LEQ(outp[:, 0], abs_ints[:, 0]),
                 dl2lib.diffsat.GEQ(outp[:, 1], abs_ints[:, 1]),
             ]
-            soundness_loss = dl2lib.diffsat.And(constraints_soundness).loss(None).mean()
+            soundness_loss = dl2lib.diffsat.And(constraints_soundness).loss(args).mean()
             # Write the precision loss here
             constraints_precision = [
                 dl2lib.diffsat.EQ(outp[:, 0], abs_ints[:, 0]),
                 dl2lib.diffsat.EQ(outp[:, 1], abs_ints[:, 1]),
             ]
-            precision_loss = dl2lib.diffsat.And(constraints_precision).loss(None).mean()
+            precision_loss = dl2lib.diffsat.And(constraints_precision).loss(args).mean()
         else:
             constraints = [
                 dl2lib.diffsat.LEQ(outp[:, 0], torch.zeros_like(outp[:, 0])),
                 dl2lib.diffsat.GEQ(outp[:, 1], torch.maximum(intervs[:, 1], -intervs[:, 0])),
             ] 
-            soundness_loss = dl2lib.diffsat.And(constraints).loss(None).mean()
+            soundness_loss = dl2lib.diffsat.And(constraints).loss(args).mean()
             constraints_precision = [
                 dl2lib.diffsat.EQ(outp[:, 0], torch.maximum(torch.zeros_like(outp[:, 0]), -torch.minimum(intervs[:, 1], -intervs[:, 0]))),
                 dl2lib.diffsat.EQ(outp[:, 1], torch.maximum(intervs[:, 1], -intervs[:, 0])),
             ]
-            precision_loss = dl2lib.diffsat.And(constraints_precision).loss(None).mean()
+            precision_loss = dl2lib.diffsat.And(constraints_precision).loss(args).mean()
 
         loss = soundness_weight * soundness_loss + precision_weight * precision_loss
         loss_history.append(loss.item())
