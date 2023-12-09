@@ -1,0 +1,31 @@
+0.0
+Soundness Measure: 100.0  (5000 out of 5000)
+Imprecision Measure: 2273.0169998977663  (11365084.99948883 diff. in 5000 cases)
+sw : pw = 20 : 1
+36.2550048828125
+Soundness Measure: 86.66  (4333 out of 5000)
+Imprecision Measure: 32.77902501272654  (142031.51538014412 diff. in 4333 cases)
+sw : pw = 10 : 1
+35.889404296875
+Soundness Measure: 66.0  (3300 out of 5000)
+Imprecision Measure: 49.77240772066694  (164248.9454782009 diff. in 3300 cases)
+sw : pw = 5 : 1
+36.45532989501953
+Soundness Measure: 63.739999999999995  (3187 out of 5000)
+Imprecision Measure: 50.17177114271242  (159897.4346318245 diff. in 3187 cases)
+sw : pw = 1 : 1
+31.038063049316406
+Soundness Measure: 19.74  (987 out of 5000)
+Imprecision Measure: 41.670644839846254  (41128.92645692825 diff. in 987 cases)
+sw : pw = 1 : 5
+141.8921356201172
+Soundness Measure: 24.759999999999998  (1238 out of 5000)
+Imprecision Measure: 43.300639125757726  (53606.191237688065 diff. in 1238 cases)
+sw : pw = 1 : 10
+265.4184875488281
+Soundness Measure: 48.4  (2420 out of 5000)
+Imprecision Measure: 28.08008772164337  (67953.81228637695 diff. in 2420 cases)
+sw : pw = 1 : 20
+514.5763549804688
+Soundness Measure: 50.62  (2531 out of 5000)
+Imprecision Measure: 25.601614826613854  (64797.68712615967 diff. in 2531 cases)
