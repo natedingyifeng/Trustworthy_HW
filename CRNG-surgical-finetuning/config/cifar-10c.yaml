@@ -1,0 +1,34 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - user: cifar
+
+wandb:
+  project: surgical-finetuning
+  exp_name: none
+  sweep_filename: none
+  use: false
+  
+data:
+  dataset_name: cifar10
+  model_name: Standard 
+  corruption_types: [brightness]
+  severity: 5
+  batch_size: 64
+  num_workers: 1
+  gpu_per_node: 1
+
+args:
+  train_mode: True
+  tune_option: first_two
+  train_n: 1000
+  epochs: 20
+  seed: 0
+  log_dir: cifar
+  auto_tune: none
+  
+hydra:
+  output_subdir: hydra
+  run:
+    dir: ./results/${data.dataset_name}/${now:%Y.%m.%d}

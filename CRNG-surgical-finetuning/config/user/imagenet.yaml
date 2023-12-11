@@ -1,0 +1,2 @@
+ckpt_dir: /coconut/yifeng-data/surgical-finetuning/Models/imagenet_rn50
+root_dir: /home/yifeng6/Project/dl/surgical-finetuning

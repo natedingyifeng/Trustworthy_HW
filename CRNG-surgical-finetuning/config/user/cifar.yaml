@@ -1,0 +1,2 @@
+ckpt_dir: /coconut/yifeng-data/surgical-finetuning/Models/cifar10_rn26_gn
+root_dir: /home/yifeng6/Project/dl/surgical-finetuning
